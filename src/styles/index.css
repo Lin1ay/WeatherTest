@@ -105,10 +105,7 @@ input:focus {
     font-size: 15px;
 }
 
-.week__day-icon {
-    /* height: 35px;
-    width: 35px;
-    margin: 12px 0px; */
+.week__day-icon {   
     transform: scale(1.1);
 }
 
