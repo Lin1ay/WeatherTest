@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react'
-import '../../src/styles/index.css'
+import '../../src/styles/index.scss'
 
 interface props {
     timeZone: number

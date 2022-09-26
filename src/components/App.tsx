@@ -1,8 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
-
-import '../../src/styles/index.css'
+import '../../src/styles/index.scss'
 import TodayCardWeather from './fiveDayWeather'
-
 import getWeatherData from '../fetch/getWeatherData'
 import Header from './Header'
 import MainTodayWeatherFrame from './MainTodayWeatherFrame'

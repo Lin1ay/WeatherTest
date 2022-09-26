@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from 'react'
-import '../../src/styles/index.css'
+import '../../src/styles/index.scss'
 import OneDayWeatherCard from '../components/oneDayWeatherCard'
 import { useSelector } from 'react-redux'
 import { IDataMain } from '../../types/types'
