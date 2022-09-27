@@ -5,11 +5,12 @@ import getWeatherData from '../fetch/getWeatherData'
 import Header from './Header'
 import MainTodayWeatherFrame from './MainTodayWeatherFrame'
 import DetailsTodayWeatherFrame from './DetailsTodayWeatherFrame'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../slices/slice'
 
 const App: FC = () => {
     const dispatch = useDispatch()
+    const theme = useSelector((state: any) => state.theme)
     const [city, setCity] = useState('Омск')
 
     useEffect(() => {
@@ -21,7 +22,7 @@ const App: FC = () => {
     }, [dispatch, city])
 
     return (
-        <div className="weather__frame">
+        <div className={`weather__frame ${theme}`}>
             <Header onChangeCity={setCity} />
             <div className="today__temp">
                 <MainTodayWeatherFrame />

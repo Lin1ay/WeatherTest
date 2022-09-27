@@ -12,6 +12,7 @@ interface ICounter {
 
 const TodayCardWeather: FC = () => {
     const dataWeather = useSelector((state: ICounter) => state.counter)
+    const theme = useSelector((state: any) => state.theme)
 
     const dailyForecast = useMemo(() => {
         return dailyForecastData(dataWeather.list)
@@ -64,7 +65,7 @@ const TodayCardWeather: FC = () => {
     }))
 
     return (
-        <div className="week__temp">
+        <div className={`week__temp ${theme}`}>
             {dataWeatherFor
                 .slice(1)
                 .map(

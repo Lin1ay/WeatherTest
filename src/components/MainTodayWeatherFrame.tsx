@@ -9,9 +9,9 @@ interface ICounter {
 
 const MainTodayWeatherFrame: FC = () => {
     const dataWeather = useSelector((state: ICounter) => state.counter)
-
+    const theme = useSelector((state: any) => state.theme)
     return (
-        <div className="today__main">
+        <div className={`today__main ${theme}`}>
             <div className="main__first-group">
                 <div>
                     <div className="main__temp">

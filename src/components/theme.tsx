@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { useSelector } from 'react-redux'
 import cn from 'classnames'
 
-import styles from '../styles/index.module.scss'
+import '../styles/index.scss'
 
-const Theme = ({ className }: any) => {
+interface IProps {
+    className?: string
+    children: ReactNode | ReactNode[]
+}
+
+const Theme = ({ className, children }: IProps) => {
     const theme = useSelector((state: any) => state.theme)
 
     React.useEffect(() => {
@@ -13,13 +18,9 @@ const Theme = ({ className }: any) => {
     }, [theme])
 
     return (
-        <div
-            className={cn(
-                className,
-                styles.root,
-                theme === 'dark' ? styles.dark : styles.light
-            )}
-        />
+        <div className={cn(className, theme === 'dark' ? 'dark' : 'light')}>
+            {children}
+        </div>
     )
 }
 

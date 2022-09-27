@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import Input from './input'
 import { set } from '../ThemeSlice'
 
@@ -10,7 +10,7 @@ interface IHeader {
  
 
 const Header = (props: IHeader) => {
-    const theme = useSelector((state: any) => state.theme)
+        const theme = useSelector((state: any) => state.theme)
     const dispatch = useDispatch()
      const handleChange = () => {
          const next = theme === 'dark' ? 'light' : 'dark'
