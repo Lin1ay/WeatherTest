@@ -7,6 +7,8 @@ import MainTodayWeatherFrame from './MainTodayWeatherFrame'
 import DetailsTodayWeatherFrame from './DetailsTodayWeatherFrame'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../slices/slice'
+import LoadingSpinner from './spinner'
+import { loading } from '../slices/loaders'
 
 const App: FC = () => {
     const dispatch = useDispatch()
@@ -17,19 +19,23 @@ const App: FC = () => {
         getWeatherData(city)
             .then((value) => {
                 dispatch(increment(value))
+                dispatch(loading(true))
             })
             .catch((err) => console.log(err))
     }, [dispatch, city])
 
     return (
-        <div className={`weather__frame ${theme}`}>
-            <Header onChangeCity={setCity} />
-            <div className="today__temp">
-                <MainTodayWeatherFrame />
-                <DetailsTodayWeatherFrame />
+        <>
+            <LoadingSpinner />
+            <div className={`weather__frame ${theme}`}>
+                <Header onChangeCity={setCity} />
+                <div className="today__temp">
+                    <MainTodayWeatherFrame />
+                    <DetailsTodayWeatherFrame />
+                </div>
+                <TodayCardWeather />
             </div>
-            <TodayCardWeather />
-        </div>
+        </>
     )
 }
 export default App

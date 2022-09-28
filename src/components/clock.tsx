@@ -1,11 +1,13 @@
 import React, { FC, useEffect, useState } from 'react'
 import '../../src/styles/index.scss'
-
+import { useDispatch } from 'react-redux'
+import { loading } from '../slices/loaders'
 interface props {
     timeZone: number
 }
 
 const Clock: FC<props> = (props) => {
+    const dispatch = useDispatch()
     const [timers, setTime] = useState<string>('')
     useEffect(() => {
         function time() {
@@ -16,12 +18,13 @@ const Clock: FC<props> = (props) => {
                     dt.getTimezoneOffset() * 60 * 1000
             ).toLocaleString()
             setTime(newDt)
+            dispatch(loading(false))
         }
         const timerId = setInterval(time, 1000)
         return () => {
             clearInterval(timerId)
         }
-    }, [props.timeZone])
+    }, [props.timeZone, dispatch])
     return <>{timers}</>
 }
 
