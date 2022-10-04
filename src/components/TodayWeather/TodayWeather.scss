@@ -1,0 +1,96 @@
+@media only screen and (min-width: 480px) {
+    .main__temp {
+        font-size: 96px;
+        font-weight: bold;
+        color: #4793ff;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main__first-group {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .main-time {
+        font-size: 20px;
+        margin-top: 20px;
+        padding: 0 15px;
+        color: #a9a9a9;
+    }
+
+    .main-city {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 0 15px;
+        color: #a9a9a9;
+    }
+
+    .main-weather-icon {
+        font-size: 20px;
+        margin-top: 20px;
+        padding: 0 15px;
+        color: #a9a9a9;
+    }
+
+    .main-title {
+        font-size: 32px;
+        padding: 0 10px;
+        font-weight: bold;
+        color: #a9a9a9;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .main__temp {
+        font-size: 96px;
+        font-weight: bold;
+        color: #4793ff;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main__first-group {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .main-time {
+        font-size: 20px;
+        margin-top: 20px;
+        padding: 0 15px;
+        color: #a9a9a9;
+    }
+
+    .main-city {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 0 15px;
+        color: #a9a9a9;
+    }
+
+    .main-weather-icon {
+        font-size: 20px;
+        margin-top: 20px;
+        padding: 0 15px;
+        color: #a9a9a9;
+    }
+
+    .main-title {
+        font-size: 32px;
+        padding: 0 10px;
+        font-weight: bold;
+        color: #a9a9a9;
+    }
+}
+@media only screen and (min-width: 992px) {
+    // Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
+}
+
+@media only screen and (min-width: 1382px) {
+    // Десктоп с большими разрешениями, телевизоры.
+}

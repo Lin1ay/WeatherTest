@@ -29,5 +29,5 @@
         "typesafe-actions": "^4.4.0",
         "typescript": "3.5.1"
     },
-    "include": ["src"]
+    "include": ["src", "public/TodayWeather"]
 }

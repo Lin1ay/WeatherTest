@@ -1,9 +1,9 @@
 import React, { FC, useMemo } from 'react'
-import { IDataMain } from '../../types/types'
-import degToCompass from '..//utils/compass'
-import pressureConverter from '..//utils/pressureConverter'
+import { IDataMain } from '../../../types/types'
+import degToCompass from '../../utils/compass'
+import pressureConverter from '../../utils/pressureConverter'
 import { useSelector } from 'react-redux'
-
+import '../TodayDetails/TodayDetails.scss'
 interface ICounter {
     counter: IDataMain
 }

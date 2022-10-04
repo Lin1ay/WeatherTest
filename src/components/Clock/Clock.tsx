@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
-import '../../src/styles/index.scss'
 import { useDispatch } from 'react-redux'
-import { loading } from '../slices/loaders'
+import { loading } from '../../slices/loaders'
+
 interface props {
     timeZone: number
 }

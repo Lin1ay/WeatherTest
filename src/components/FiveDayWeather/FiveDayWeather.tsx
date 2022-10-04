@@ -1,10 +1,10 @@
 import React, { FC, useMemo } from 'react'
-import '../../src/styles/index.scss'
-import OneDayWeatherCard from '../components/oneDayWeatherCard'
+import '../FiveDayWeather/FiveDayWeather.scss'
+import OneDayWeatherCard from '../OneDayWeatherCard/oneDayWeatherCard'
 import { useSelector } from 'react-redux'
-import { IDataMain } from '../../types/types'
-import dailyForecastData from '../utils/dailyForecast'
-import badWeather from '../utils/badWeather'
+import { IDataMain } from '../../../types/types'
+import dailyForecastData from '../../utils/dailyForecast'
+import badWeather from '../../utils/badWeather'
 
 interface ICounter {
     counter: IDataMain

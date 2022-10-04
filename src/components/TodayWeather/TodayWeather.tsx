@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
-import { IDataMain } from '../../types/types'
-import Clock from './clock'
+import { IDataMain } from '../../../types/types'
+import Clock from '../Clock/Clock'
 import { useSelector } from 'react-redux'
+import '../TodayWeather/TodayWeather.scss'
 
 interface ICounter {
     counter: IDataMain

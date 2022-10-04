@@ -1,14 +1,14 @@
 import React, { FC, useEffect, useState } from 'react'
-import '../../src/styles/index.scss'
-import TodayCardWeather from './fiveDayWeather'
-import getWeatherData from '../fetch/getWeatherData'
-import Header from './Header'
-import MainTodayWeatherFrame from './MainTodayWeatherFrame'
-import DetailsTodayWeatherFrame from './DetailsTodayWeatherFrame'
+import '../App/App.scss'
+import TodayCardWeather from '../FiveDayWeather/FiveDayWeather'
+import getWeatherData from '../../fetch/getWeatherData'
+import Header from '../Header/Header'
+import MainTodayWeatherFrame from '../../components/TodayWeather/TodayWeather'
+import DetailsTodayWeatherFrame from '../TodayDetails/TodayDetails'
+import LoadingSpinner from '../Spinner/Spinner'
+import { loading } from '../../slices/loaders'
 import { useDispatch, useSelector } from 'react-redux'
-import { increment } from '../slices/slice'
-import LoadingSpinner from './spinner'
-import { loading } from '../slices/loaders'
+import { increment } from '../../slices/slice'
 
 const App: FC = () => {
     const dispatch = useDispatch()

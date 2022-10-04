@@ -1,7 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Input from './input'
-import { set } from '../slices/ThemeSlice'
+import Input from '../Input/Input'
+import { set } from '../../slices/ThemeSlice'
+import '../Header/Header.scss'
+
 
 interface IHeader {
     onChangeCity: (city: string) => void
@@ -20,15 +22,17 @@ const Header = (props: IHeader) => {
             <div className="weather__header">
                 <div className="weather__header-logo">
                     <img src="/images/HeaderLogo.svg" alt="header_logo" />
-                    <div className="weather__header-title">REACT WEATHER</div>
-                    <div className="city"></div>
                 </div>
-                <div className="weather__header-switch">
-                    <img
-                        src="/images/switch.svg"
-                        alt="theme_switch"
+                <div className="weather__header-title">REACT WEATHER</div>
+            </div>
+            <div className="navbar">
+                <div className="search__panel">
+                    <button
+                        className={`navbar__switch ${theme}`}
                         onClick={handleChange}
-                    />
+                    >
+                        {theme.toString()}
+                    </button>
                     <Input onChange={props.onChangeCity} />
                 </div>
             </div>

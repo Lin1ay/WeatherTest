@@ -1,0 +1,96 @@
+@media only screen and (min-width: 480px) {
+    .week__day-temp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.875rem;
+        color: rgb(148, 148, 148);
+        box-sizing: border-box;
+        margin: 0 1rem;
+        padding: 0.625rem;
+        &.light {
+            background-color: #fff;
+        }
+    }
+
+    .week__day-title {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .week__day-weekday {
+        margin-top: 2px;
+        font-size: 0.7rem;
+        color: #4793ff;
+    }
+
+    .week__day-icon {
+        transform: scale(1.1);
+    }
+
+    .week__day--date {
+        display: flex;
+        flex-direction: column;
+        width: 8rem;
+    }
+    .day__weather {
+        display: flex;
+        flex-direction: column;
+        width: 95vw;
+    }
+    .day__weather-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .week__day-temp {       
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.875rem;
+        color: rgb(148, 148, 148);
+        box-sizing: border-box;
+        margin: 0 1rem;
+        padding: 0.625rem;
+        &.light {
+            background-color: #fff;
+        }
+    }
+
+    .week__day-title {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .week__day-weekday {
+        margin-top: 2px;
+        font-size: 0.7rem;
+        color: #4793ff;
+    }
+
+    .week__day-icon {
+        transform: scale(1.1);
+    }
+
+    .week__day--date {
+        display: flex;
+        flex-direction: column;
+        width: 8rem;
+    }
+    .day__weather {
+        display: flex;
+        flex-direction: column;       
+    }
+    .day__weather-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+@media only screen and (min-width: 992px) {
+    // Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
+}
+
+@media only screen and (min-width: 1382px) {
+    // Десктоп с большими разрешениями, телевизоры.
+}

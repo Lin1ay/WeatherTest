@@ -1,0 +1,28 @@
+@media only screen and (min-width: 480px) {
+    .week__temp {
+        max-width: 29rem;
+        margin: 1rem auto;
+        margin-top: 1.875rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .week__temp {
+        max-width: 48rem;
+        margin: 1rem auto;
+        margin-top: 1.875rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+@media only screen and (min-width: 992px) {
+    // Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
+}
+
+@media only screen and (min-width: 1382px) {
+    // Десктоп с большими разрешениями, телевизоры.
+}

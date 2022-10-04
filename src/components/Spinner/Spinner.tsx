@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import '../styles/index.scss'
+import '../Spinner/Spinner.scss'
 
 function LoadingSpinner() {
     const isLoad = useSelector((state: any) => state.loader)

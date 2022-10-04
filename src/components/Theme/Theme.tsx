@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { useSelector } from 'react-redux'
 import cn from 'classnames'
 
-import '../styles/index.scss'
+import '../Theme/Theme.scss'
 
 interface IProps {
     className?: string

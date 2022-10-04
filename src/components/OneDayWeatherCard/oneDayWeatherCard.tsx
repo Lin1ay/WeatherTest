@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { RootState } from '../store/store'
-import { dateFormatter } from '../utils/dateFormatter'
-
+import { RootState } from '../../store/store'
+import { dateFormatter } from '../../utils/dateFormatter'
+import '../OneDayWeatherCard/OneDayWeatherCard.scss'
 interface props {
     data: {
         tempMax: number
@@ -22,23 +22,28 @@ const OneDayWeatherCard = (props: props) => {
             weekday: 'long',
         }
     )
-
     return (
         <div key={props.data.date} className={`week__day-temp ${theme}`}>
-            <span className="week__day-title">{weekday}</span>
-            <span className="week__day-weekday">
-                {dateFormatter(props.data.cardDayWeek)}
-            </span>
-            <span>
+            <div className="week__day--date">
+                <div className="week__day-title">{weekday}</div>
+                <div className="week__day-weekday">
+                    {dateFormatter(props.data.cardDayWeek)}
+                </div>
+            </div>
+            <div>
                 <img
                     className="week__day-icon"
                     src={`/images/${props.data.cardIcon}.svg`}
                     alt="weather_icon"
                 />
-            </span>
-            <span>Днем: {props.data.tempMax}°</span>
-            <span>Ночью: {props.data.tempMin}°</span>
-            <span>Ветер: {props.data.windMaxSpeed} мс/с</span>
+            </div>
+            <div className="day__weather">
+                <div className="day__weather-inner">
+                    <div>Днем: {props.data.tempMax}°</div>
+                    <div>Ночью: {props.data.tempMin}°</div>
+                </div>
+                <div>Ветер: {props.data.windMaxSpeed} мс/с</div>
+            </div>
         </div>
     )
 }
