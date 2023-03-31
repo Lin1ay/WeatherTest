@@ -1,96 +1,59 @@
-@media only screen and (min-width: 480px) {
+.today__main {
+    flex-grow: 0.45;
+     border-radius: 0.625rem;
+        border: 0.125rem solid #4793ff;
+}
+@media only screen and (max-width: 320px) {
+    .today__temp {
+        margin-top: 30px;
+    }
     .main__temp {
-        font-size: 96px;
+        font-size: 60px;
         font-weight: bold;
         color: #4793ff;
         display: flex;
-        justify-content: center;
     }
 
     .main__first-group {
+        padding-left: 10px;
         display: flex;
+        width: 75%;
+        margin: 0 auto;
         box-sizing: border-box;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .main-time {
         font-size: 20px;
-        margin-top: 20px;
         padding: 0 15px;
-        color: #a9a9a9;
-    }
-
-    .main-city {
-        font-size: 20px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding: 0 15px;
-        color: #a9a9a9;
-    }
-
-    .main-weather-icon {
-        font-size: 20px;
-        margin-top: 20px;
-        padding: 0 15px;
-        color: #a9a9a9;
-    }
-
-    .main-title {
-        font-size: 32px;
-        padding: 0 10px;
-        font-weight: bold;
-        color: #a9a9a9;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .main__temp {
-        font-size: 96px;
-        font-weight: bold;
-        color: #4793ff;
+        color: #f8f9ec;
         display: flex;
         justify-content: center;
     }
 
-    .main__first-group {
-        display: flex;
-        box-sizing: border-box;
-        justify-content: space-between;
-    }
-
-    .main-time {
-        font-size: 20px;
-        margin-top: 20px;
-        padding: 0 15px;
-        color: #a9a9a9;
-    }
-
     .main-city {
-        font-size: 20px;
+        font-size: 30px;
+        font-weight: bold;
         margin-top: 10px;
         margin-bottom: 10px;
         padding: 0 15px;
-        color: #a9a9a9;
+        color: #f8f9ec;
+        display: flex;
+        justify-content: center;
     }
 
-    .main-weather-icon {
-        font-size: 20px;
+    .weather__icon {
         margin-top: 20px;
-        padding: 0 15px;
-        color: #a9a9a9;
+        color: #f8f9ec;
+        justify-content: flex-end;
     }
 
-    .main-title {
-        font-size: 32px;
-        padding: 0 10px;
+    .today__description {
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
         font-weight: bold;
-        color: #a9a9a9;
+        color: #f8f9ec;
     }
-}
-@media only screen and (min-width: 992px) {
-    // Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
-}
-
-@media only screen and (min-width: 1382px) {
-    // Десктоп с большими разрешениями, телевизоры.
 }

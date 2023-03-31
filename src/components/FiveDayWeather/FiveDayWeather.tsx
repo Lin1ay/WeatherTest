@@ -2,21 +2,18 @@ import React, { FC, useMemo } from 'react'
 import '../FiveDayWeather/FiveDayWeather.scss'
 import OneDayWeatherCard from '../OneDayWeatherCard/oneDayWeatherCard'
 import { useSelector } from 'react-redux'
-import { IDataMain } from '../../../types/types'
 import dailyForecastData from '../../utils/dailyForecast'
 import badWeather from '../../utils/badWeather'
-
-interface ICounter {
-    counter: IDataMain
-}
+import { store } from '../../store/store'
 
 const TodayCardWeather: FC = () => {
-    const dataWeather = useSelector((state: ICounter) => state.counter)
+    const state = useSelector(store.getState)
+
     const theme = useSelector((state: any) => state.theme)
 
     const dailyForecast = useMemo(() => {
-        return dailyForecastData(dataWeather.list)
-    }, [dataWeather])
+        return dailyForecastData(state.weather.list)
+    }, [state.weather])
 
     const keys: string[] = useMemo(() => {
         return Object.keys(dailyForecast)

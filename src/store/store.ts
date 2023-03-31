@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterSlice from '../slices/slice'
-import themeReducer from '../slices/ThemeSlice'
-import loaderSlice  from '../slices/loaders'
+import weatherSlice from '../slices/slice'
+import themeSlice from '../slices/ThemeSlice'
+import loaderSlice from '../slices/loaders'
 
 export const store = configureStore({
     reducer: {
-        counter: counterSlice,
-        theme: themeReducer,
-        loader: loaderSlice
+        weather: weatherSlice,
+        theme: themeSlice,
+        loader: loaderSlice,
     },
 })
 

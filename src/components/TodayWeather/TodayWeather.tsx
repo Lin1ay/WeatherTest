@@ -1,41 +1,35 @@
 import React, { FC } from 'react'
-import { IDataMain } from '../../../types/types'
 import Clock from '../Clock/Clock'
 import { useSelector } from 'react-redux'
 import '../TodayWeather/TodayWeather.scss'
-
-interface ICounter {
-    counter: IDataMain
-}
+import { store } from '../../store/store'
 
 const MainTodayWeatherFrame: FC = () => {
-    const dataWeather = useSelector((state: ICounter) => state.counter)
-    const theme = useSelector((state: any) => state.theme)
+    const state = useSelector(store.getState)
+
+    const theme = state.theme
+    const str = state.weather.list[0].weather[0].description || ' '
+    const newStr = str[0].toUpperCase() + str.slice(1)
     return (
         <div className={`today__main ${theme}`}>
+            <div className="main-city">{state.weather.city.name}</div>
+            <div className="main-time">
+                <Clock timeZone={state.weather.city.timezone} />
+            </div>
             <div className="main__first-group">
-                <div>
-                    <div className="main__temp">
-                        {Math.round(dataWeather.list[0].main.temp)}°
-                    </div>
-                    <div className="main-title">СЕЙЧАС </div>
-                    <div className="main-weather-icon">
-                        {dataWeather.list[0].weather[0].description}
-                    </div>
+                <div className="main__temp">
+                    {Math.round(state.weather.list[0].main.temp)}°
                 </div>
-                <div className="main-icon">
+                <div className="weather__icon">
                     <img
-                        className="weather__icon"
-                        src={`/images/${dataWeather.list[0].weather[0].icon}.svg`}
+                        src={`/images/${state.weather.list[0].weather[0].icon}.svg`}
                         alt="weather_icon"
+                        height="110px"
                     />
                 </div>
             </div>
+            <div className="today__description">{newStr}</div>
             <div className="main__second-group">
-                <div className="main-time">
-                    <Clock timeZone={dataWeather.city.timezone} />
-                </div>
-                <div className="main-city">Город: {dataWeather.city.name}</div>
                 <div />
             </div>
         </div>

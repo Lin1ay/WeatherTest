@@ -4,17 +4,17 @@ import { IDataMain } from '../../types/types'
 
 const initialState: IDataMain = defaultWeatherData
 
-export const counterSlice = createSlice({
-    name: 'counter',
+export const weatherSlice = createSlice({
+    name: 'weather',
     initialState,
     reducers: {
-        increment: (state, action) => {
+        weatherData: (state, action) => {
             state = action.payload
             return state
         },
     },
 })
 
-export const { increment } = counterSlice.actions
+export const { weatherData } = weatherSlice.actions
 
-export default counterSlice.reducer
+export default weatherSlice.reducer

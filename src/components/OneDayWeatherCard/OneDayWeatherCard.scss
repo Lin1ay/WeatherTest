@@ -1,96 +1,45 @@
-@media only screen and (min-width: 480px) {
-    .week__day-temp {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.875rem;
-        color: rgb(148, 148, 148);
-        box-sizing: border-box;
-        margin: 0 1rem;
-        padding: 0.625rem;
-        &.light {
-            background-color: #fff;
-        }
+.week__day--temp {
+    height: 100px;
+    background-color: #4793ff;
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: #f8f9ec;
+    
+    &.light {
+        background-color: #fff;
     }
-
-    .week__day-title {
-        font-weight: bold;
-        font-size: 1rem;
-    }
-
-    .week__day-weekday {
-        margin-top: 2px;
-        font-size: 0.7rem;
-        color: #4793ff;
-    }
-
-    .week__day-icon {
-        transform: scale(1.1);
-    }
-
-    .week__day--date {
-        display: flex;
-        flex-direction: column;
-        width: 8rem;
-    }
-    .day__weather {
-        display: flex;
-        flex-direction: column;
-        width: 95vw;
-    }
-    .day__weather-inner {
-        display: flex;
-        justify-content: space-between;
+    &.dark {
+        background-color: #4793ff;
     }
 }
-@media only screen and (min-width: 768px) {
-    .week__day-temp {       
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.875rem;
-        color: rgb(148, 148, 148);
-        box-sizing: border-box;
-        margin: 0 1rem;
-        padding: 0.625rem;
-        &.light {
-            background-color: #fff;
-        }
-    }
 
-    .week__day-title {
-        font-weight: bold;
-        font-size: 1rem;
-    }
-
-    .week__day-weekday {
-        margin-top: 2px;
-        font-size: 0.7rem;
-        color: #4793ff;
-    }
-
-    .week__day-icon {
-        transform: scale(1.1);
-    }
-
-    .week__day--date {
-        display: flex;
-        flex-direction: column;
-        width: 8rem;
-    }
-    .day__weather {
-        display: flex;
-        flex-direction: column;       
-    }
-    .day__weather-inner {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-@media only screen and (min-width: 992px) {
-    // Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
+.week__weekday {
+    font-size: 14px;
+    color: #4793ff;
 }
 
-@media only screen and (min-width: 1382px) {
-    // Десктоп с большими разрешениями, телевизоры.
+.day__weather {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: space-between;
 }
+
+.day__weather--info {
+    display: flex;
+    align-items: baseline;
+    margin-right: 10px;
+}
+.day__weather--daytemp {
+    font-size: 20px;
+    margin-left: 10px;
+}
+.day__weather--nighttemp {
+    color: lightgray;
+    margin-left: 5px;
+}
+.day__weather--wind {
+    margin-left: 15px;
+    font-size: 20px;
+}
+

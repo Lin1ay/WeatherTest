@@ -13,10 +13,9 @@
 
 body {
     font-size: 16px;
-    margin: 0;
-    padding: 1rem;
+    margin: 0 auto;   
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     background: var(--background-color);
     color: var(--text-decoration-color);
 }
-

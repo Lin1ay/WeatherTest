@@ -1,12 +1,9 @@
-import React, { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { ITimeZone } from '../../../types/types'
 import { loading } from '../../slices/loaders'
 
-interface props {
-    timeZone: number
-}
-
-const Clock: FC<props> = (props) => {
+const Clock: FC<ITimeZone> = (props) => {
     const dispatch = useDispatch()
     const [timers, setTime] = useState<string>('')
     useEffect(() => {

@@ -48,3 +48,7 @@ export interface IDataMain {
 export interface Map {
     [index: string]: ITemp[]
 }
+
+export interface ITimeZone {
+    timeZone: number
+}

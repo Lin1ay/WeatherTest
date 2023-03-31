@@ -1,5 +1,5 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
+import { store } from '../../store/store'
 import '../Input/Input.scss'
 
 interface IInput {
@@ -7,7 +7,8 @@ interface IInput {
 }
 
 function Input({ onChange }: IInput) {
-    const theme = useSelector((state: any) => state.theme)
+    const state = useSelector(store.getState)
+    const theme = state.theme
 
     return (
         <>
@@ -15,8 +16,10 @@ function Input({ onChange }: IInput) {
                 className={`navbar__input ${theme}`}
                 placeholder="Введите название города"
                 type="text"
+                inputMode="url"
                 onKeyDown={(e) => {
-                    if (e.code === 'Enter') {
+                    console.log(e)
+                    if (e.code === 'Enter' || e.key === 'Enter') {
                         onChange(e.currentTarget.value)
                         e.currentTarget.value = ''
                     }
