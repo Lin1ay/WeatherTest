@@ -11,10 +11,9 @@ interface IHeader {
 const Header = (props: IHeader) => {
     const state = useSelector(store.getState)
     const dispatch = useDispatch()
-    const theme = state.theme
 
     const handleChange = () => {
-        const next = theme === 'dark' ? 'light' : 'dark'
+        const next = state.theme === 'dark' ? 'light' : 'dark'
         dispatch(set(next))
     }
     return (
@@ -30,10 +29,10 @@ const Header = (props: IHeader) => {
                     <Input onChange={props.onChangeCity} />
                 </div>
                 <button
-                    className={`navbar__switch ${theme}`}
+                    className={`navbar__switch ${state.theme}`}
                     onClick={handleChange}
                 >
-                    {theme.toString()}
+                    {state.theme.toString()}
                 </button>
             </div>
         </>

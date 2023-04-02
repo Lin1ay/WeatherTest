@@ -6,7 +6,6 @@ import { store } from '../../store/store'
 
 const MainTodayWeatherFrame: FC = () => {
     const state = useSelector(store.getState)
-
     const theme = state.theme
     const str = state.weather.list[0].weather[0].description || ' '
     const newStr = str[0].toUpperCase() + str.slice(1)

@@ -15,7 +15,6 @@ const App: FC = () => {
     const state = useSelector(store.getState)
     const [city, setCity] = useState('Омск')
     const dispatch = useDispatch()
-    const theme = state.theme
 
     useEffect(() => {
         getWeatherData(city)
@@ -23,13 +22,13 @@ const App: FC = () => {
                 dispatch(weatherData(value))
                 dispatch(loading(true))
             })
-            .catch((err) => console.log(err))
+            .catch((err) => err)
     }, [dispatch, city])
 
     return (
         <>
             <LoadingSpinner />
-            <div className={`weather__frame ${theme}`}>
+            <div className={`weather__frame ${state.theme}`}>
                 <Header onChangeCity={setCity} />
                 <div className="today__temp">
                     <MainTodayWeatherFrame />

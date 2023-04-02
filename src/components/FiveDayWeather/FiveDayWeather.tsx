@@ -9,8 +9,6 @@ import { store } from '../../store/store'
 const TodayCardWeather: FC = () => {
     const state = useSelector(store.getState)
 
-    const theme = useSelector((state: any) => state.theme)
-
     const dailyForecast = useMemo(() => {
         return dailyForecastData(state.weather.list)
     }, [state.weather])
@@ -62,7 +60,7 @@ const TodayCardWeather: FC = () => {
     }))
 
     return (
-        <div className={`week__temp ${theme}`}>
+        <div className={`week__temp ${state.theme}`}>
             {dataWeatherFor
                 .slice(1)
                 .map(
