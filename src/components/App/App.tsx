@@ -12,9 +12,9 @@ import { weatherData } from '../../slices/slice'
 import { store } from '../../store/store'
 
 const App: FC = () => {
+    const dispatch = useDispatch()
     const state = useSelector(store.getState)
     const [city, setCity] = useState('Омск')
-    const dispatch = useDispatch()
 
     useEffect(() => {
         getWeatherData(city)
@@ -24,7 +24,7 @@ const App: FC = () => {
             })
             .catch((err) => err)
     }, [dispatch, city])
-
+    console.log('1')
     return (
         <>
             <LoadingSpinner />

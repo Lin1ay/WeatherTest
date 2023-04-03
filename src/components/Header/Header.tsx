@@ -18,22 +18,22 @@ const Header = (props: IHeader) => {
     }
     return (
         <>
-            <div className="weather__header">
-                <div className="weather__header-logo">
+            <div className="header">
+                <div className="header__logo">
                     <img src="/images/HeaderLogo.svg" alt="header_logo" />
-                </div>
-                <div className="weather__header-title">REACT WEATHER</div>
-            </div>
-            <div className="navbar">
-                <div className="search__panel">
-                    <Input onChange={props.onChangeCity} />
+                    <div className="header__title">REACT WEATHER</div>
                 </div>
                 <button
-                    className={`navbar__switch ${state.theme}`}
+                    className={`header__switch ${state.theme}`}
                     onClick={handleChange}
                 >
                     {state.theme.toString()}
                 </button>
+            </div>
+            <div className="navbar">
+                <div className="navbar__search-panel">
+                    <Input onChange={props.onChangeCity} />
+                </div>
             </div>
         </>
     )

@@ -36,7 +36,6 @@ const OneDayWeatherCard = (props: props) => {
                     src={`/images/${props.data.cardIcon}.svg`}
                     alt="weather_icon"
                 />
-
                 <div className="day__weather--info">
                     <div className="day__weather--daytemp">
                         {props.data.tempMax}°

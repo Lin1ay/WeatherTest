@@ -1,15 +1,16 @@
-    .weather__frame {
-        padding: 15px;
-        min-height: 100vh;
-        width: 60%;
-        margin: 2rem auto;
-        border:#4793ff 2px solid;
-    }
-    .today__temp {
-        display: flex;
-        justify-content: space-between;
-    }
-  
-@media only screen and (max-width: 479px) {
-
+.weather__frame {
+    display: flex;
+    flex-direction: column;
+    min-width: 60vw;
+    box-sizing: border-box;
+    background-color: #ddebff;
+    padding: 15px;
+    height: fit-content;
+    border-radius: 7px;
+    border: #4793ff 2px solid;
+}
+.today__temp {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }

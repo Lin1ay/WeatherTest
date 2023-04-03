@@ -28,9 +28,7 @@ const MainTodayWeatherFrame: FC = () => {
                 </div>
             </div>
             <div className="today__description">{newStr}</div>
-            <div className="main__second-group">
-                <div />
-            </div>
+            <div className="main__second-group"></div>
         </div>
     )
 }

@@ -1,15 +1,26 @@
 .week__temp {
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
     border-radius: 0.625rem;
     border: 0.125rem solid #4793ff;
+
+    &.dark {
+        background-color: #2e3035;
+        color: #a9a9a9;
+    }
+    &.light {
+        background-color: #fff;
+        color: gray;
+    }
 }
 
 // @media only screen and (min-width: 0px) {
-  
+
 // }
 
 // @media only screen and (min-width: 768px) {
-  
+
 // }
 // @media only screen and (min-width: 992px) {
 //     // Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
