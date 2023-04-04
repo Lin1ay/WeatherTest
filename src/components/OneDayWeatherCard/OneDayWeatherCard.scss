@@ -1,10 +1,7 @@
 .week__day--temp {
-    height: 100px;
     background-color: #4793ff;
-    margin-top: 20px;
     font-size: 0.875rem;
     color: #f8f9ec;
-    
     &.light {
         background-color: #fff;
     }
@@ -27,19 +24,21 @@
 
 .day__weather--info {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     margin-right: 10px;
 }
 .day__weather--daytemp {
+    color: #4793ff;
     font-size: 20px;
     margin-left: 10px;
 }
 .day__weather--nighttemp {
-    color: lightgray;
+    color: gray;
     margin-left: 5px;
 }
 .day__weather--wind {
+    color: black;
     margin-left: 15px;
     font-size: 20px;
 }
-

@@ -18,7 +18,6 @@ function Input({ onChange }: IInput) {
                 type="text"
                 inputMode="url"
                 onKeyDown={(e) => {
-                    console.log(e)
                     if (e.code === 'Enter' || e.key === 'Enter') {
                         onChange(e.currentTarget.value)
                         e.currentTarget.value = ''

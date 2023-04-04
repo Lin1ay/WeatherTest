@@ -1,5 +1,22 @@
 .today__main {
     width: 48%;
     border-radius: 0.625rem;
+    box-sizing: border-box;
+    padding: 15px;
     border: 0.125rem solid #4793ff;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px 5px rgba(34, 60, 80, 0.2);
+}
+
+@media screen and (min-width: 319px) {
+    .today__main {
+        width: 100%;
+    }
+    .main-time {
+        display: none;
+    }
+    .main__first-group {
+        display: flex;
+        justify-content: space-between;
+    }
 }

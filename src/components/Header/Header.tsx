@@ -19,7 +19,7 @@ const Header = (props: IHeader) => {
     return (
         <>
             <div className="header">
-                <div className="header__logo">
+                <div className="logo">
                     <img src="/images/HeaderLogo.svg" alt="header_logo" />
                     <div className="header__title">REACT WEATHER</div>
                 </div>

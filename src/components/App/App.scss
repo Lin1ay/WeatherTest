@@ -1,10 +1,11 @@
-.weather__frame {
+.containter {
+    position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 60vw;
+    margin: 5% 25%;
     box-sizing: border-box;
     background-color: #ddebff;
-    padding: 15px;
+    padding: 35px 25px;
     height: fit-content;
     border-radius: 7px;
     border: #4793ff 2px solid;
@@ -12,5 +13,19 @@
 .today__temp {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 40px;
+}
+@media screen and (min-width: 319px) {
+    .containter {
+        margin: 0;
+        padding: 15px 10px;
+        border-radius: 0;
+        border: none;
+    }
+    .today__temp {
+        display: block;
+        // justify-content: center;
+        // align-items: center;
+        // flex-direction: column;
+    }
 }

@@ -23,7 +23,6 @@ const MainTodayWeatherFrame: FC = () => {
                     <img
                         src={`/images/${state.weather.list[0].weather[0].icon}.svg`}
                         alt="weather_icon"
-                        height="110px"
                     />
                 </div>
             </div>

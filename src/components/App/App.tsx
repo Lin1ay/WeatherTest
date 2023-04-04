@@ -28,7 +28,7 @@ const App: FC = () => {
     return (
         <>
             <LoadingSpinner />
-            <div className={`weather__frame ${state.theme}`}>
+            <div className={`containter ${state.theme}`}>
                 <Header onChangeCity={setCity} />
                 <div className="today__temp">
                     <MainTodayWeatherFrame />
