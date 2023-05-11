@@ -1,8 +1,7 @@
-import React, { ReactNode } from 'react'
-import { useSelector } from 'react-redux'
+import React, { ReactNode, useEffect } from 'react'
 import cn from 'classnames'
-
-import '../Theme/Theme.scss'
+import { store } from '../../store/store'
+import { useSelector } from 'react-redux'
 
 interface IProps {
     className?: string
@@ -10,9 +9,9 @@ interface IProps {
 }
 
 const Theme = ({ className, children }: IProps) => {
-    const theme = useSelector((state: any) => state.theme)
+    const theme = useSelector(store.getState).theme
 
-    React.useEffect(() => {
+    useEffect(() => {
         document.documentElement.dataset.theme = theme
         localStorage.setItem('theme', theme)
     }, [theme])

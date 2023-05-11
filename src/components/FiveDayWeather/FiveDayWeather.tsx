@@ -8,11 +8,10 @@ import { store } from '../../store/store'
 
 const TodayCardWeather: FC = () => {
     const state = useSelector(store.getState)
-
-    const dailyForecast = useMemo(() => {
-        return dailyForecastData(state.weather.list)
-    }, [state.weather])
-
+    const dailyForecast = useMemo(
+        () => dailyForecastData(state.weather.list),
+        [state.weather]
+    )
     const keys: string[] = useMemo(() => {
         return Object.keys(dailyForecast)
     }, [dailyForecast])
@@ -28,22 +27,18 @@ const TodayCardWeather: FC = () => {
             return Math.round(val.main.temp_min)
         })
         newCardMinTemp.push(Math.min(...minTemp))
-
         const maxTemp: number[] = values.map((val) => {
             return Math.round(val.main.temp_max)
         })
         newCardMaxTemp.push(Math.max(...maxTemp))
-
         const nowWindSpeed: number[] = values.map((val) => {
             return Math.round(val.wind.speed)
         })
         newCardWindSpeed.push(Math.max(...nowWindSpeed))
-
         const nowCardDayWeek: number[] = values.map((val) => {
             return Math.round(val.dt)
         })
         newDayWeek.push(Math.max(...nowCardDayWeek))
-
         const nowWeatherIcon: string[] = values.map((val) => {
             return val.weather[0].icon
         })

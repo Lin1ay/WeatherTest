@@ -1,9 +1,12 @@
-import { FC, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { ITimeZone } from '../../../types/types'
 import { loading } from '../../slices/loaders'
 
-const Clock: FC<ITimeZone> = (props) => {
+interface ITimezone {
+    timezone: number
+}
+
+const Clock = (props: ITimezone) => {
     const dispatch = useDispatch()
     const [timers, setTime] = useState<string>('')
     useEffect(() => {
@@ -11,7 +14,7 @@ const Clock: FC<ITimeZone> = (props) => {
             const dt = new Date()
             const newDt = new Date(
                 dt.valueOf() +
-                    props.timeZone * 1000 +
+                    props.timezone * 1000 +
                     dt.getTimezoneOffset() * 60 * 1000
             ).toLocaleString()
             setTime(newDt)
@@ -21,7 +24,7 @@ const Clock: FC<ITimeZone> = (props) => {
         return () => {
             clearInterval(timerId)
         }
-    }, [props.timeZone, dispatch])
+    }, [props.timezone, dispatch])
     return <>{timers}</>
 }
 

@@ -36,13 +36,15 @@ const OneDayWeatherCard = (props: props) => {
                     src={`/images/${props.data.cardIcon}.svg`}
                     alt="weather_icon"
                 />
-                <div className="day__weather--info">
+                <div className="day__weather__temp">
                     <div className="day__weather--daytemp">
                         {props.data.tempMax}°
                     </div>
                     <div className="day__weather--nighttemp">
                         {props.data.tempMin}°
                     </div>
+                </div>
+                <div className="day__weather--info">
                     <div className="day__weather--wind">
                         {props.data.windMaxSpeed} мс/с
                     </div>

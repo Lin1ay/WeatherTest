@@ -3,28 +3,26 @@ import { store } from '../../store/store'
 import '../Input/Input.scss'
 
 interface IInput {
-    onChange: (city: string) => void
+    onChangeCity: (city: string) => void
 }
 
-function Input({ onChange }: IInput) {
+function Input({ onChangeCity }: IInput) {
     const state = useSelector(store.getState)
     const theme = state.theme
 
     return (
-        <>
-            <input
-                className={`navbar__input ${theme}`}
-                placeholder="Введите название города"
-                type="text"
-                inputMode="url"
-                onKeyDown={(e) => {
-                    if (e.code === 'Enter' || e.key === 'Enter') {
-                        onChange(e.currentTarget.value)
-                        e.currentTarget.value = ''
-                    }
-                }}
-            />
-        </>
+        <input
+            className={`navbar__input ${theme}`}
+            placeholder="Введите название города"
+            type="text"
+            inputMode="text"
+            onKeyDown={(e) => {
+                if (e.code === 'Enter' || e.key === 'Enter') {
+                    onChangeCity(e.currentTarget.value)
+                    e.currentTarget.value = ''
+                }
+            }}
+        />
     )
 }
 

@@ -1,14 +1,12 @@
 import { FC, useEffect, useState } from 'react'
 import '../App/App.scss'
-import TodayCardWeather from '../FiveDayWeather/FiveDayWeather'
 import getWeatherData from '../../fetch/getWeatherData'
 import Header from '../Header/Header'
-import MainTodayWeatherFrame from '../../components/TodayWeather/TodayWeather'
-import DetailsTodayWeatherFrame from '../TodayDetails/TodayDetails'
+import Main from './Body/Main'
 import LoadingSpinner from '../Spinner/Spinner'
 import { loading } from '../../slices/loaders'
 import { useDispatch, useSelector } from 'react-redux'
-import { weatherData } from '../../slices/slice'
+import { weatherData } from '../../slices/weather'
 import { store } from '../../store/store'
 
 const App: FC = () => {
@@ -20,21 +18,16 @@ const App: FC = () => {
         getWeatherData(city)
             .then((value) => {
                 dispatch(weatherData(value))
-                dispatch(loading(true))
+                dispatch(loading(false))
             })
             .catch((err) => err)
     }, [dispatch, city])
-    console.log('1')
     return (
         <>
             <LoadingSpinner />
-            <div className={`containter ${state.theme}`}>
+            <div className={`container ${state.theme}`}>
                 <Header onChangeCity={setCity} />
-                <div className="today__temp">
-                    <MainTodayWeatherFrame />
-                    <DetailsTodayWeatherFrame />
-                </div>
-                <TodayCardWeather />
+                <Main />
             </div>
         </>
     )

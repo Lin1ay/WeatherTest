@@ -1,31 +1,33 @@
 .week__day--temp {
+    display: flex;
+    flex-direction: column;
     background-color: #4793ff;
     font-size: 0.875rem;
-    color: #f8f9ec;
+    margin-top: 10px;
+    &.dark {
+        background-color: #2e3035;
+        color: #a9a9a9;
+    }
     &.light {
         background-color: #fff;
-    }
-    &.dark {
-        background-color: #4793ff;
+        color: #4793ff;
     }
 }
-
 .week__weekday {
     font-size: 14px;
     color: #4793ff;
 }
-
 .day__weather {
     display: flex;
     align-items: center;
-    margin-top: 15px;
-    justify-content: space-between;
+    margin-top: 5px;
+    justify-content: flex-start;
 }
-
-.day__weather--info {
+.day__weather__temp {
     display: flex;
-    flex-wrap: wrap;
     align-items: baseline;
+}
+.day__weather--info {
     margin-right: 10px;
 }
 .day__weather--daytemp {
@@ -35,10 +37,10 @@
 }
 .day__weather--nighttemp {
     color: gray;
-    margin-left: 5px;
+    margin-left: 2px;
 }
 .day__weather--wind {
-    color: black;
+    color: #4793ff;
     margin-left: 15px;
-    font-size: 20px;
+    font-size: 15px;
 }

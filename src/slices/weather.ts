@@ -1,8 +1,8 @@
+import { IWeatherData } from '../../types/types'
 import { createSlice } from '@reduxjs/toolkit'
 import { defaultWeatherData } from '../utils/constsApp'
-import { IDataMain } from '../../types/types'
 
-const initialState: IDataMain = defaultWeatherData
+const initialState: IWeatherData = defaultWeatherData
 
 export const weatherSlice = createSlice({
     name: 'weather',

@@ -1,33 +1,20 @@
 .week__temp {
-    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 30px;
     border-radius: 0.625rem;
     box-sizing: border-box;
     padding: 10px;
     border: 0.125rem solid #4793ff;
     background-color: #fff;
-    box-shadow: 0px 4px 8px 5px rgba(34, 60, 80, 0.2);
-
+    box-shadow: 0px 2px 4px 3px rgba(34, 60, 80, 0.2);
     &.dark {
         background-color: #2e3035;
         color: #a9a9a9;
     }
     &.light {
         background-color: #fff;
-        color: gray;
+        color: #a9a9a9;
     }
 }
-
-// @media only screen and (min-width: 0px) {
-
-// }
-
-// @media only screen and (min-width: 768px) {
-
-// }
-// @media only screen and (min-width: 992px) {
-//     // Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
-// }
-
-// @media only screen and (min-width: 1382px) {
-//     // Десктоп с большими разрешениями, телевизоры.
-// }

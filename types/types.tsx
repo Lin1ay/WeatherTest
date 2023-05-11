@@ -1,54 +1,67 @@
-export type IMain = {
-    temp: number
-    pressure: number
-    feels_like: number
-    humidity: number
-    grnd_level: number
-    temp_max: number
-    temp_min: number
+export interface IWeatherData {
+    cod: string
+    message: number
+    cnt: number
+    list: IOneDayTemp[]
+    city: ICityInfo
 }
 
-export type IWeather = {
-    description: string
-    icon: string
+export interface IOneDayTemp {
+    dt: number
+    main: {
+        temp: number
+        feels_like: number
+        temp_min: number
+        temp_max: number
+        pressure: number
+        sea_level: number
+        grnd_level: number
+        humidity: number
+        temp_kf: number
+    }
+    weather: [
+        {
+            id: number
+            main: string
+            description: String
+            icon: string
+        }
+    ]
+    clouds: {
+        all: number
+    }
+    wind: {
+        speed: number
+        deg: number
+        gust: number
+    }
+    visibility: number
+    pop: number
+    sys: {
+        pod: string
+    }
+    dt_txt: string
 }
-
-export type IWind = {
-    deg: number
-    speed: number
+export interface ICityInfo {
+    id: number
+    name: string
+    coord: {
+        lat: number
+        lon: number
+    }
+    country: string
+    population: number
+    timezone: number
+    sunrise: number
+    sunset: number
 }
 
 export interface IDailyForecast {
-    [index: string]: ITemp[]
+    [index: string]: IOneDayTemp[]
 }
 
-export interface ITemp {
-    dt: number
-    main: IMain
-    weather: IWeather[]
-    wind: IWind
-}
-
-export interface IDataMain {
-    city: {
-        coord: {
-            lat: number
-            lon: number
-        }
-        country: string
-        id: number
-        name: string
-        sunrise: number
-        sunset: number
-        timezone: number
-    }
-    list: ITemp[]
-}
-
-export interface Map {
-    [index: string]: ITemp[]
-}
-
-export interface ITimeZone {
-    timeZone: number
+export interface IStore {
+    loader: boolean
+    weather: IWeatherData
+    theme: boolean
 }

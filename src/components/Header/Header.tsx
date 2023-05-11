@@ -1,6 +1,6 @@
 import Input from '../Input/Input'
 import { useDispatch, useSelector } from 'react-redux'
-import { set } from '../../slices/ThemeSlice'
+import { set } from '../../slices/theme'
 import '../Header/Header.scss'
 import { store } from '../../store/store'
 
@@ -18,21 +18,27 @@ const Header = (props: IHeader) => {
     }
     return (
         <>
-            <div className="header">
-                <div className="logo">
-                    <img src="/images/HeaderLogo.svg" alt="header_logo" />
-                    <div className="header__title">REACT WEATHER</div>
+            <div className={`header ${state.theme}`}>
+                <div className="header__container">
+                    <div className="header__container__inner">
+                        <img
+                            className="header__container__inner_logo"
+                            src="/images/HeaderLogo.svg"
+                            alt="logo"
+                        />
+                        <div className="header__container__inner_projectName">
+                            REACT WEATHER
+                        </div>
+                    </div>
+                    <button
+                        className={`header__switch ${state.theme}`}
+                        onClick={handleChange}
+                    >
+                        {state.theme.toString()}
+                    </button>
                 </div>
-                <button
-                    className={`header__switch ${state.theme}`}
-                    onClick={handleChange}
-                >
-                    {state.theme.toString()}
-                </button>
-            </div>
-            <div className="navbar">
-                <div className="navbar__search-panel">
-                    <Input onChange={props.onChangeCity} />
+                <div className="header_input">
+                    <Input onChangeCity={props.onChangeCity} />
                 </div>
             </div>
         </>
